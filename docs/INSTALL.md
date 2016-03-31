@@ -8,10 +8,15 @@ sudo apt-get install python-pip python-dev memcached
 sudo pip install virtualenvwrapper
 ```
 ## Get the files
-You can clone it directly from []()
+You can clone it directly from [https://github.com/Chirath02/hackademic_Django.git](https://github.com/Chirath02/hackademic_Django.git)
 ```bash
-
+git clone https://github.com/Chirath02/hackademic_Django.git
 ```
+Or using ssh.
+```bash
+git clone git@github.com:Chirath02/hackademic_Django.git
+```
+
 ## Setup development environment
 First, some initialization steps. Most of this only needs to be done 
 one time. You will want to add the command to source 
