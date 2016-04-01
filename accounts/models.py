@@ -28,6 +28,8 @@ class UserManager(BaseUserManager):
             email=email,
             username=username,
             is_admin=True,
+            is_staff=True,
+            is_superuser=True,
             is_active=True,
             **kwargs
         )
@@ -73,3 +75,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
+
+    @property
+    def is_staff(self):
+        return self.is_admin
