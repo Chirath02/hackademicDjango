@@ -45,7 +45,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """
 
     email = models.EmailField(unique=True)
-    full_name = models.CharField(_('User Name'), max_length=50, unique=True, blank=True, null=True)
+    full_name = models.CharField(_('Full Name'), max_length=50, unique=True, blank=True, null=True)
     user_pic = models.ImageField(_('Photo'), upload_to='user_pic', blank=True, null=True)
     username = models.CharField(_('User Name'), max_length=50, unique=True, blank=True, null=True,
                                     validators=[RegexValidator(regex='^[A-Za-z]*$')])
@@ -79,3 +79,24 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def is_staff(self):
         return self.is_admin
+
+
+class Classes(models.Model):
+
+    classname = models.CharField(_('Class Name'), max_length=200)
+
+    is_archived = models.BooleanField(default=False)
+
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now_add=False, auto_now=True, null=True)
+
+    # created_by = models.ForeignKey('accounts.User')
+    # modified_by = models.ForeignKey('accounts.User')
+
+    def __unicode__(self):
+        return self.classname
+
+    def __str__(self):
+        return self.classname
+
+
