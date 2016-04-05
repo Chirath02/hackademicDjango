@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Articles
+from .forms import ArticleForm
+
+
+class ArticleAdmin(admin.ModelAdmin):
+    form = ArticleForm
+
+admin.site.register(Articles, ArticleForm)
