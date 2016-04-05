@@ -5,5 +5,5 @@ from .models import Articles
 class ArticleForm(forms.ModelForm):
 
     class Meta:
-        model = Article
+        model = Articles
         exclude = []
