@@ -6,4 +6,4 @@ class RegistrationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        exclude = []
+        exclude = ['permissions']
