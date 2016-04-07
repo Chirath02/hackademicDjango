@@ -1,9 +1,9 @@
 from django import forms
-from .models import Articles
+from .models import Article
 
 
 class ArticleForm(forms.ModelForm):
 
     class Meta:
-        model = Articles
+        model = Article
         exclude = []

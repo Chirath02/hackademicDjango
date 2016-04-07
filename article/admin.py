@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import Articles
+from .models import Article
 from .forms import ArticleForm
 
 
 
 
-admin.site.register(Articles)
+admin.site.register(Article)
