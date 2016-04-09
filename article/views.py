@@ -22,7 +22,7 @@ def artilce_list(request):
     List all code snippets, or create a new snippet.
     """
     if request.method == 'GET':
-        articles = artilce.objects.all()
+        articles = Article.objects.all()
         serializer = ArticleSerializer(articles, many=True)
         return JSONResponse(serializer.data)
 
