@@ -23,7 +23,7 @@ def artilce_list(request):
     """
     if request.method == 'GET':
         articles = artilce.objects.all()
-        serializer = SnippetSerializer(articles, many=True)
+        serializer = ArticleSerializer(articles, many=True)
         return JSONResponse(serializer.data)
 
     elif request.method == 'POST':
@@ -46,12 +46,12 @@ def article_detail(request, pk):
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        serializer = ArticleSerializer(snippet)
+        serializer = ArticleSerializer(article)
         return JSONResponse(serializer.data)
 
     elif request.method == 'PUT':
         data = JSONParser().parse(request)
-        serializer = ArticleSerializer(snippet, data=data)
+        serializer = ArticleSerializer(article, data=data)
         if serializer.is_valid():
             serializer.save()
             return JSONResponse(serializer.data)
