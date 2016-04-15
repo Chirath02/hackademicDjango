@@ -2,7 +2,7 @@ from article.models import Article
 from article.serializers import ArticleSerializer
 from rest_framework import generics
 from rest_framework import permissions
-from artilces.permissions import IsOwnerOrReadOnly
+from article.permissions import IsOwnerOrReadOnly
 
 
 class ArticleList(generics.ListCreateAPIView):
