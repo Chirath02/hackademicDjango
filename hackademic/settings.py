@@ -117,3 +117,7 @@ AUTH_USER_MODEL = "accounts.User"
 #         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
 #     ]
 # }
+
+REST_FRAMEWORK = {
+    'PAGE_SIZE': 10
+}
