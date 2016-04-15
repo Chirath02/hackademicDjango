@@ -20,3 +20,8 @@ urlpatterns = [
     url(r'^', include('article.urls'), name='articles'),
     url(r'^', include('accounts.urls'), name='accounts'),
 ]
+
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
+]
