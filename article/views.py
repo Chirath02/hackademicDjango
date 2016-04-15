@@ -2,6 +2,7 @@ from article.models import Article
 from article.serializers import ArticleSerializer
 from rest_framework import generics
 from rest_framework import permissions
+from artilces.permissions import IsOwnerOrReadOnly
 
 
 class ArticleList(generics.ListCreateAPIView):
@@ -20,6 +21,7 @@ class ArticleDetail(generics.RetrieveUpdateDestroyAPIView):
     '''
     Retrieve, update or delete an article instance
     '''
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly,)
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
