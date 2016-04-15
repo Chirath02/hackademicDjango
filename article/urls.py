@@ -4,7 +4,7 @@ from article import views
 
 
 urlpatterns = [
-    url(r'article/$', views.ArtilceList.as_view()),
+    url(r'article/$', views.ArticleList.as_view()),
     url(r'article/(?P<pk>[0-9]+)/$', views.ArticleDetail.as_view()),
 ]
 
