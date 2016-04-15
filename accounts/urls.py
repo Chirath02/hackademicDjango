@@ -1,6 +1,6 @@
 from django.conf.urls import url
+from accounts import views
 
-from .views import register
 
 urlpatterns = [
     url(r'^users/$', views.UserList.as_view()),

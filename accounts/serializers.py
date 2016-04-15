@@ -1,10 +1,11 @@
 from accounts.models import User
 from rest_framework import serializers
+from article.models import Article
 
 
 class UserSerializer(serializers.ModelSerializer):
-    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Snippet.objects.all())
+    articles = serializers.PrimaryKeyRelatedField(many=True, queryset=Article.objects.all())
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'article_created_by')
+        fields = ('id', 'username', 'articles')
