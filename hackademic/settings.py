@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'accounts',
     'article',
+    'challenges',
 )
 
 MIDDLEWARE_CLASSES = (

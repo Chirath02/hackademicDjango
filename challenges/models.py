@@ -19,9 +19,9 @@ class Challenge(models.Model):
     default_duration = models.IntegerField(_('Default Duration'), )
 
     date_posted = models.DateTimeField(_('Date Created'), auto_now_add=True, auto_now=False)
-    created_by = models.ForeignKey('accounts.User', related_name='article_created_by', blank=True, null=True)
+    created_by = models.ForeignKey('accounts.User', related_name='challenge_created_by', blank=True, null=True)
     date_modified = models.DateTimeField(_('Date Modified'), auto_now_add=False, auto_now=True, null=True)
-    modified_by = models.ForeignKey('accounts.User', related_name='article_modified_by', blank=True, null=True)
+    modified_by = models.ForeignKey('accounts.User', related_name='challenge_modified_by', blank=True, null=True)
 
     is_published = models.BooleanField(_('Published?'), default=False)
 
