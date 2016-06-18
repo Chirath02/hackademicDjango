@@ -128,5 +128,5 @@ REST_FRAMEWORK = {
 }
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "client"),
+    os.path.join(BASE_DIR, "client/static"),
 ]
