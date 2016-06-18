@@ -59,7 +59,9 @@ ROOT_URLCONF = 'hackademic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, "client"),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,6 +107,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 # Use custom user model
 
 AUTH_USER_MODEL = "accounts.User"
@@ -122,3 +126,7 @@ AUTH_USER_MODEL = "accounts.User"
 REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "client"),
+]
