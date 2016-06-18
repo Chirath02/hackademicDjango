@@ -5,6 +5,8 @@ from rest_framework import permissions
 from article.permissions import IsOwnerOrReadOnly
 
 
+
+
 class ArticleList(generics.ListCreateAPIView):
     '''
     List all articles or create a new article using generic LIstCreateApiView
