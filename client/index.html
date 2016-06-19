@@ -15,33 +15,40 @@
 
         <!-- load angular js and bootstrap js files -->
 
-        <script scr="{% static 'js/angular.min.js' %}"></script>
-        <script scr="{% static 'js/angular-route.min.js' %}"></script>
-        <script scr="{% static 'js/angular-resource.min.js' %}"></script>
-        <script scr="{% static 'js/angular-animate.min.js' %}"></script>
-        <script scr="{% static 'js/bootstrap.min.js' %}"></script>
-        <script scr="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+        <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+
+        <script src="{% static 'js/angular.min.js' %}"></script>
+        <script src="{% static 'js/angular-route.min.js' %}"></script>
+        <script src="{% static 'js/angular-resource.min.js' %}"></script>
+        <script src="{% static 'js/angular-animate.min.js' %}"></script>
+
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
 
         <!-- angular js app components -->
 
-        <script scr="{% static 'appjs/app.js' %}"></script>
-        <script scr="{% static 'appjs/app.config.js' %}"></script>
+        <script src="{% static 'appjs/app.js' %}"></script>
+        <script src="{% static 'appjs/app.config.js' %}"></script>
 
-        <script scr="{% static 'appjs/core/article/article.module.js' %}"></script>
-        <script scr="{% static 'appjs/core/article/article.service.js' %}"></script>
+        <script src="{% static 'appjs/core/article/article.module.js' %}"></script>
+        <script src="{% static 'appjs/core/article/article.service.js' %}"></script>
 
-        <script scr="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
-        <script scr="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
+        <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
+        <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
+
+
 
     </head>
 
     <body>
         {% verbatim %}
 
+        <div>
             <label>Name:</label>
             <input type="text" ng-model="yourName" placeholder="Enter a name here">
             <hr>
             <h1>Hello {{yourName}}!</h1>
+        </div>
 
         {% endverbatim %}
     </body>
