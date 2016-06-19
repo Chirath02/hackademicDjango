@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 
-<html lang="en" ng-app>
+<html lang="en" ng-app="hackademicApp">
 
     <head>
         <meta charset="UTF-8">
@@ -28,6 +28,8 @@
         <!-- angular js app components -->
 
         <script src="{% static 'appjs/app.js' %}"></script>
+
+        <!--
         <script src="{% static 'appjs/app.config.js' %}"></script>
 
         <script src="{% static 'appjs/core/article/article.module.js' %}"></script>
@@ -35,22 +37,27 @@
 
         <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
         <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
+        -->
 
 
 
     </head>
 
-    <body>
-        {% verbatim %}
 
-        <div>
-            <label>Name:</label>
-            <input type="text" ng-model="yourName" placeholder="Enter a name here">
-            <hr>
-            <h1>Hello {{yourName}}!</h1>
-        </div>
+    {% verbatim %}
 
-        {% endverbatim %}
+    <body ng-controller="angularListController">
+
+        <ul>
+            <li ng-repeat="article in articles">
+                <span>{{article.title}}</span>
+                <p>{{article.content}}</p>
+            </li>
+        </ul>
+
     </body>
+
+    {% endverbatim %}
+
 
 </html>
