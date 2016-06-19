@@ -29,14 +29,16 @@
 
         <script src="{% static 'appjs/app.js' %}"></script>
 
+
+        <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
+        <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
         <!--
         <script src="{% static 'appjs/app.config.js' %}"></script>
 
         <script src="{% static 'appjs/core/article/article.module.js' %}"></script>
         <script src="{% static 'appjs/core/article/article.service.js' %}"></script>
 
-        <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
-        <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
+
         -->
 
 
@@ -48,12 +50,7 @@
 
     <body ng-controller="angularListController">
 
-        <ul>
-            <li ng-repeat="article in articles">
-                <span>{{article.title}}</span>
-                <p>{{article.content}}</p>
-            </li>
-        </ul>
+        <article-list></article-list>
 
     </body>
 
