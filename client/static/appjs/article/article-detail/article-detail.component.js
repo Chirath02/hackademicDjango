@@ -3,8 +3,13 @@
  */
 
 angular.module('hackademicApp').component('articleDetail', {
-    template: 'TBD: Detail view for <span>{{$ctrl.articleId}}</span>',
-    controller: function articleDetailController($routeParams) {
-        this.articleId = $routeParams.articleId;
-    }
+    templateUrl: 'static/appjs/article/article-detail/article-detail.template.html',
+    controller: ['$http', '$routeParams',
+        function articleDetailController($http, $routeParams) {
+            var self = this;
+
+            $http.get('/article/' + $routeParams.articleId + '.json').then(function(response) {
+                self.article = response.data;
+            });
+    }]
 });
