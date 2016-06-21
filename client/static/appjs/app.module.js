@@ -8,3 +8,4 @@ var hackademicApp = angular.module('hackademicApp', [
     'articleList'
 ]);
 
+

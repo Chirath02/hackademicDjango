@@ -27,13 +27,15 @@
 
         <!-- angular js app components -->
 
-        <script src="{% static 'appjs/app.js' %}"></script>
+        <script src="{% static 'appjs/app.module.js' %}"></script>
 
 
         <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
         <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
+
         <!--
         <script src="{% static 'appjs/app.config.js' %}"></script>
+
 
         <script src="{% static 'appjs/core/article/article.module.js' %}"></script>
         <script src="{% static 'appjs/core/article/article.service.js' %}"></script>
@@ -48,7 +50,7 @@
 
     {% verbatim %}
 
-    <body ng-controller="angularListController">
+    <body>
 
         <article-list></article-list>
 

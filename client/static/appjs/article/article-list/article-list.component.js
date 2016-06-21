@@ -5,15 +5,20 @@
 angular.module('hackademicApp').component('articleList', {
     templateUrl: 'static/appjs/article/article-list/article-list.template.html',
     controller:
-        function angularListController() {
-            this.articles = [{
-                title: "Hello World",
-                content: "A \"Hello, world!\" program is often used to introduce beginning o"
-            },
+        function articleListController() {
+            this.articles = [
                 {
-                    title: "Hello World",
-                    content: "A \"Hello, world!\" program is "
-                }];
+                    title: 'Nexus S',
+                    content: 'Fast just got faster with Nexus S.'
+                }, {
+                    title: 'Motorola XOOM™ with Wi-Fi',
+                    content: 'The Next, Next Generation tablet.'
+                }, {
+                    title: 'MOTOROLA XOOM™',
+                    content: 'The Next, Next Generation tablet.'
+                }
+            ];
         }
 });
+
 
