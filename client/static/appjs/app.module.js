@@ -5,7 +5,7 @@
 
 // Define the `hackademicApp` module
 var hackademicApp = angular.module('hackademicApp', [
-    'core',  'articleDetail', 'articleList', 'ngRoute'
+    'articleDetail', 'articleList', 'ngRoute'
 ]);
 
 
