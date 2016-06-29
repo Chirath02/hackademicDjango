@@ -1,7 +1,4 @@
 /**
- * Created by chirath on 6/19/16.
+ * Created by chirath on 6/22/16.
  */
-
-angular.module('core.article', [
-   'ngResource'
-]);
+angular.module('core.article', ['ngResource']);

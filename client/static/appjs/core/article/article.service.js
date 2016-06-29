@@ -7,9 +7,9 @@ angular.module('core.article').factory('Article', ['$resource',
         return $resource('article/:articleId.json', {}, {
             query: {
                 method: 'GET',
-                params: {articleId: 'article'},
+                params: {phoneId: 'article'},
                 isArray: true
             }
-        })
+        });
     }
 ]);

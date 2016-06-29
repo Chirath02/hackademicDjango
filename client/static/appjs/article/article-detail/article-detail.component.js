@@ -2,14 +2,15 @@
  * Created by chirath on 6/21/16.
  */
 
-angular.module('hackademicApp').component('articleDetail', {
+angular.module('phoneDetail').component('articleDetail', {
     templateUrl: 'static/appjs/article/article-detail/article-detail.template.html',
-    controller: ['$http', '$routeParams',
-        function articleDetailController($http, $routeParams) {
+    controller: ['$routeParams', 'Article',
+        function ArticleDetailController($routeParams, Article) {
             var self = this;
 
-            $http.get('/article/' + $routeParams.articleId + '.json').then(function(response) {
-                self.article = response.data;
+
+            self.article = Article.get({articleId: $routeParams.articleId}, function(article) {
+
             });
     }]
 });
