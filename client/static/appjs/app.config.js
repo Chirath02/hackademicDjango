@@ -7,12 +7,12 @@ angular.module('hackademicApp').config(['$locationProvider', '$routeProvider',
         $locationProvider.hashPrefix('!');
 
         $routeProvider.
-        when('/articles', {
+        when('/article', {
             template: '<article-list></article-list>'
         }).
-        when('/articles/:articleId', {
+        when('/article/:articleId', {
             template: '<article-detail></article-detail>'
         }).
-        otherwise('/articles');
+        otherwise('/article');
     }
 ]);

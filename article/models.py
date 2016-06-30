@@ -6,6 +6,8 @@ class Article(models.Model):
 
     title = models.CharField(_('Title'), max_length=255)
     content = models.TextField(_('Contents'))
+    featured_img = models.ImageField(_('Featured image'),  upload_to='article_pic', blank=True, null=True)
+    description = models.CharField(_('Description'), max_length=255)
 
     date_added = models.DateTimeField(_('Date Created'), auto_now_add=True, auto_now=False)
     created_by = models.ForeignKey('accounts.User', related_name='article_created_by', blank=True, null=True)

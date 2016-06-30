@@ -6,7 +6,7 @@ angular.
 module('core.article').
 factory('Article',  ['$resource', '$location',
     function($resource, $location) {
-        if($location.path() == '/articles') {
+        if($location.path() == '/article') {
             return $resource('article.json', {}, {
                 query: {
                     method: 'GET',
