@@ -15,15 +15,21 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from .views import HomePageView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('article.urls'), name='articles'),
     url(r'^', include('accounts.urls'), name='accounts'),
     url(r'^$', HomePageView.as_view(), name='home'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
     url(r'^api-auth/', include('rest_framework.urls',
                                namespace='rest_framework')),
 ]
+
+
+
+

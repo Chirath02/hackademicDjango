@@ -7,11 +7,6 @@
         <meta charset="UTF-8">
         <title>Hackademic</title>
 
-        <!-- load bootstrap css files -->
-
-        <style rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"></style>
-        <style rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}"></style>
-        <style rel="stylesheet" href="{% static 'css/style.css' %}"></style>
 
         <!-- load angular js and bootstrap js files -->
 
@@ -30,34 +25,50 @@
         <script src="{% static 'appjs/app.module.js' %}"></script>
         <script src="{% static 'appjs/app.config.js' %}"></script>
 
-        <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
-        <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
-
-
-        <script src="{% static 'appjs/article/article-detail/article-detail.component.js' %}"></script>
-        <script src="{% static 'appjs/article/article-detail/article-detail.module.js' %}"></script>
-
-
-        <script src="{% static 'appjs/core/core.module.js' %}"></script>
-        <script src="{% static 'appjs/core/article/article.service.js' %}"></script>
         <script src="{% static 'appjs/core/article/article.module.js' %}"></script>
+        <script src="{% static 'appjs/core/article/article.service.js' %}"></script>
+
+        <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
+        <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
+
+        <script src="{% static 'appjs/article/article-detail/article-detail.module.js' %}"></script>
+        <script src="{% static 'appjs/article/article-detail/article-detail.component.js' %}"></script>
+
+        <!-- load bootstrap css files -->
 
 
-
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
     </head>
 
 
-    {% verbatim %}
+
 
     <body>
+        <!-- Side bar -->
+        <div id="sidebar">
+            <div>Hackademic</div>
+            <div>Articles</div>
+        </div>
 
-        <div ng-view></div>
 
+        <!-- nav bar -->
+        <div id="navbar">
+            <div></div>
+        </div>
+
+
+
+        <!-- Content -->
+        {% verbatim %}
+            <div id="content" ng-view></div>
+        {% endverbatim %}
     </body>
 
-    {% endverbatim %}
+
 
 
 </html>
