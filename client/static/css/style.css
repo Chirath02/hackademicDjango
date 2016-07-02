@@ -1,21 +1,135 @@
+body {
+    background-color: #f7f7f8;
+}
+
 #sidebar {
-    position: fixed;
     height:100%;
     width:20%;
-    background-color: yellow;
+    background-color: #f1f1f1;
+    border-right: 1px solid #d6d6d6;
+    z-index: 1;
+    position: fixed;
+
+    display: block;
+    top: 0;
+    left: 0;
+    background-position: center center;
+}
+
+#sidebar-background {
+    position: absolute;
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+    /*background: url("/static/img/background_sidebar.jpg");*/
+}
+
+#sidebar-title {
+    height:9%;
+    border-bottom: 1px solid #d8d8d8;
+    background-color: #fbfbfb;
+    text-transform: uppercase;
+    padding: 5% 0px;
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 30px;
+    font-size: 180%;
+}
+
+.sidebar-items {
+    height: 8%;
+    text-align: center;
+    padding-top: 3%;
+    font-size: 1.7em;
+    background-color: #f7f7f8;
 }
 
 #navbar {
     position: fixed;
-    height:10%;
+    height:9%;
     width:80%;
     left: 20%;
-    background-color: greenyellow;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #d8d8d8;
 }
 
 #content {
-    padding-left: 20%;
-    padding-top: 10%;
-
-    background-color: burlywood;
+    padding-left: 22%;
+    padding-top: 8%;
 }
+
+.article-card {
+    margin-left: 4%;
+    margin-right: 2%;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: -50;
+    padding: 1.5%;
+}
+
+.article-card-img {
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.article-card-img {
+    text-align: center;
+}
+.article-card-img img {
+    max-height: 15em;
+    max-width: 30em;
+
+}
+
+.article-card-content {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.article-card-title {
+    margin: 0;
+    color: #333333;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.article-card-by {
+    color: #2aabd2;
+    float: left;
+}
+
+.article-card-date {
+    color: #2aabd2;
+    float: right;
+}
+
+.article-detail-img {
+    padding: 3em 0 3em 0;
+}
+
+.article-detail-title {
+    color: #333333;
+    font-weight: 500;
+    font-size: 4em;
+}
+
+.article-detail-img img{
+    max-width: 60em;
+}
+
+
+
+

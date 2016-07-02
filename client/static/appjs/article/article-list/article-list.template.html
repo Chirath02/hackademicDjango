@@ -1,15 +1,37 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
+
+
+
             <!--Body content-->
 
-            <ul class="article">
-                <li ng-repeat="article in $ctrl.articles">
-                    <span>{{article.title}}</span>
-                    <p>{{article.description}}</p>
-                    <img ng-src="{{article.featured_img}}"/>>
-                </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="row">
+                    <div class="article-card col-md-5" ng-repeat="article in $ctrl.articles">
+
+                        <div class="article-card-content">
+                            <div class="article-card-title">
+                                <a ng-href="http://127.0.0.1:8000/#!/article/{{article.id}}">{{article.title}}</a>
+                            </div>
+                            <div class="article-card-img">
+                                <img ng-src="{{article.featured_img}}"/>
+                            </div>
+
+
+                            <p class="article-card-description">
+                                {{article.description}}
+                                <a ng-href="http://127.0.0.1:8000/#!/article/{{article.id}}"> read more ....</a>
+                            </p>
+
+                            <p class="article-card-bydate">
+                                <span class="article-card-by">
+                                    By : {{article.created_by}}
+                                </span>
+                                <span class="article-card-date">
+                                    Date : {{article.date_added | date}}
+                                </span>
+                            </p>
+
+                        </div>
+
+                    </div>
+</div>
+
+
