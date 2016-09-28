@@ -30,7 +30,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 ```
 Lets create a virtual environment for our project
 ```bash
-mkvirtualenv hackademic
+mkvirtualenv --python=/usr/bin/python3 hackademic
 workon hackademic
 ```
 ## Install requirements
@@ -42,7 +42,8 @@ pip install -r requirements.txt
 ## Setup database
 Setup tables in the DB
 ```bash
-python manage.py syncdb
+python manage.py makemigrations
+python manage.py migrate
 ```
 Collect all the static files for fast serving
 ```bash
