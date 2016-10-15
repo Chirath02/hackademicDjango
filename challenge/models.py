@@ -13,12 +13,12 @@ class Challenge(models.Model):
     abstract = models.CharField(max_length=500, default="")
     ordering = models.IntegerField(default=1)
     level = models.CharField(max_length=300, default="")
-    duration = models.TimeField(bank=True, null=True)
+    duration = models.TimeField(blank=True, null=True, )
     goal = models.CharField(max_length=300, default="")
     solution = models.CharField(max_length=300, default="")
     availability = models.CharField(max_length=100, default='private')
     default_points = models.IntegerField()
-    default_duration = models.TimeField(bank=True, null=True)
+    default_duration = models.TimeField(blank=True, null=True)
 
     def __str__(self):
         return self.title
