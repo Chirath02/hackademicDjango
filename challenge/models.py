@@ -20,5 +20,7 @@ class Challenge(models.Model):
     default_points = models.IntegerField()
     default_duration = models.TimeField(blank=True, null=True)
 
+    image = models.ImageField(blank=True, null=True, upload_to='challenges/')
+
     def __str__(self):
         return self.title
