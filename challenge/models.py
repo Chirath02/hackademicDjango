@@ -32,6 +32,7 @@ class Challenge_attempts(models.Model):
     # class_ = models.ForeignKey(Class, related_name="class")
     time = models.TimeField()
     status = models.IntegerField()
+    count = models.IntegerField(default=1)
 
     def __str__(self):
         return self.user
