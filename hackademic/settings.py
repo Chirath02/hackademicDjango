@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # hackademic apps
     'article',
+    'account',
     'challenge',
 ]
 
