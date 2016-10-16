@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     # hackademic apps
     'account',
     'classes',
-    'article',
     'challenge',
+    'article',
 ]
 
 MIDDLEWARE = [

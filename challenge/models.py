@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from classes.models import Class
 
+
 class Challenge(models.Model):
     title = models.CharField(max_length=300)
     pkg_name = models.CharField(max_length=100)

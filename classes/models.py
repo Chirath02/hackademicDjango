@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from challenge.models import Challenge
 
 class Class(models.Model):
     name = models.CharField(max_length=200)
@@ -12,7 +11,7 @@ class Class(models.Model):
         return self.name
 
 class ClassChallenge(models.Model):
-    challenge = models.ForeignKey(Challenge, on_delete=models.CASCADE, related_name="Challenge")
+    challenge_id = models.IntegerField()
     class_name = models.ForeignKey(Class, on_delete=models.CASCADE, related_name="Class")
     date_created = models.DateTimeField(auto_now=False, auto_now_add=True)
 
