@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-#from classes.models import Class
+from classes.models import Class
 
 class Challenge(models.Model):
     title = models.CharField(max_length=300)
@@ -30,7 +30,7 @@ class Challenge(models.Model):
 class ChallengeAttempts(models.Model):
     user = models.ForeignKey(User, related_name="user")
     challenge = models.ForeignKey(Challenge, related_name="challange")
- #   class_name = models.ForeignKey(Class, related_name="class_name")
+    class_name = models.ForeignKey(Class, related_name="class_name")
     time = models.TimeField()
     status = models.IntegerField()
     count = models.IntegerField(default=1)
