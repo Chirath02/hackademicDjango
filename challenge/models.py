@@ -24,3 +24,16 @@ class Challenge(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Challenge_attempts(models.Model):
+    user = models.ForeignKey(User, related_name="user")
+    challenge = models.ForeignKey(Challenge, related_name="challange")
+    # class_ = models.ForeignKey(Class, related_name="class")
+    time = models.TimeField()
+    status = models.IntegerField()
+
+    def __str__(self):
+        return self.user
+
+
