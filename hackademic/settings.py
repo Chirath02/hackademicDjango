@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # hackademic apps
-    'article',
     'account',
+    'classes',
+    'article',
     'challenge',
 ]
 
