@@ -30,7 +30,7 @@ class Challenge(models.Model):
 
 class ChallengeAttempts(models.Model):
     user = models.ForeignKey(User, related_name="user")
-    challenge = models.ForeignKey(Challenge, related_name="challange")
+    challenge = models.ForeignKey(Challenge, related_name="challanges")
     class_name = models.ForeignKey(Class, related_name="class_name")
     time = models.TimeField()
     status = models.IntegerField()
@@ -40,8 +40,8 @@ class ChallengeAttempts(models.Model):
         return self.user
 
 class ScoringRules(models.Model):
-    challenge =models.Model(Challenge)
-    class_name = models.ForeignKey(Class, related_name="class_name")
+    challenge = models.IntegerField(default=0)
+    class_id = models.IntegerField(default=0)
     attempt_cap = models.IntegerField(default=0)
     attempt_cap_penalty = models.IntegerField(default=0)
     time_between_first_and_last_attempt = models.IntegerField(default=0)
