@@ -39,4 +39,26 @@ class ChallengeAttempts(models.Model):
     def __str__(self):
         return self.user
 
+class ScoringRules(models.Model):
+    challenge =models.Model(Challenge)
+    class_name = models.ForeignKey(Class, related_name="class_name")
+    attempt_cap = models.IntegerField(default=0)
+    attempt_cap_penalty = models.IntegerField(default=0)
+    time_between_first_and_last_attempt = models.IntegerField(default=0)
+    time_penalty = models.IntegerField(default=0)
+    time_reset_limit_seconds = models.IntegerField(default=0)
+    request_frequency_per_minute = models.IntegerField(default=0)
+    request_frequency_penalty = models.IntegerField(default=0)
+    experimentation_bonus = models.IntegerField(default=0)
+    multiple_solution_bonus = models.IntegerField(default=0)
+    banned_user_agents = models.TextField(default='')
+    banned_user_agents_penalty = models.IntegerField(default=0)
+    base_score = models.IntegerField(default=0)
+    first_try_solves = models.IntegerField(default=0)
+    penalty_for_many_first_try_solves = models.IntegerField(default=0)
+
+    def __str__(self):
+        return "Scoring rules for " + self.challenge
+
+
 
