@@ -17,3 +17,11 @@ class ClassChallenge(models.Model):
 
     def __str__(self):
         return self.challenge + " of " + self.class_name
+
+class ClassMembership(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    class_name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="class_name")
+    date_created = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+    def __str__(self):
+        return self.user + " is a member of " + self.class_name
