@@ -2,7 +2,7 @@
 
 Its super easy to set up our development environment
 
-##Collect Pre-requisites
+##Install Pre-requisites
 
 Install python-pip, python-dev and virtualenvwrapper
 
@@ -11,7 +11,7 @@ sudo apt-get install python-pip python-dev memcached
 sudo pip install virtualenvwrapper
 ```
 
-##Get the files
+##Clone the project
 
 You can clone it directly from https://github.com/Chirath02/hackademic_Django.git
 ```
@@ -21,7 +21,7 @@ Or using ssh.
 ```
 git clone git@github.com:Chirath02/hackademic_Django.git
 ```
-##Setup development environment
+##Setup the development environment
 
 First, some initialization steps. Most of this only needs to be done one time. You will want to add the command to source /usr/local/bin/virtualenvwrapper.sh to your shell startup file (.bashrc or .zshrc) changing the path to virtualenvwrapper.sh depending on where it was installed by pip.
 ```
@@ -35,7 +35,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv --python=/usr/bin/python3 hackademic
 workon hackademic
 ```
-##Install requirements
+##Install all the requirements
 
 All the requirements are mentioned in the file requirements.txt.
 ```
@@ -48,9 +48,9 @@ Setup tables in the DB
 python manage.py makemigrations
 python manage.py migrate
 ```
-###Create a admin user
+###Create an admin user
 ```
-python manage.py create superuser
+python manage.py createsuperuser
 ```
 ##Collect all the static files for fast serving
 ```
