@@ -36,7 +36,11 @@ Setup database
 
 Setup tables in the DB
 
-python manage.py syncdb
+python manage.py makemigrations
+python manage.py migrate
+
+Create a admin user
+python manage.py create superuser
 Collect all the static files for fast serving
 
 python manage.py collectstatic
