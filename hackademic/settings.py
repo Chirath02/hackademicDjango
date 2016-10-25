@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'classes',
     'challenge',
     'article',
+    # Third party apps
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
