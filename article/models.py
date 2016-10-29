@@ -11,6 +11,7 @@ class Article(models.Model):
     is_published = models.BooleanField(default=0)
     date_published = models.DateTimeField(blank=True, null=True)
     ordering = models.IntegerField(default=1)
+    image = models.ImageField(blank=True, null=True, upload_to='article/')
 
     def __str__(self):
         return self.title
