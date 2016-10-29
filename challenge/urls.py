@@ -1,6 +1,6 @@
-from .views import ArticleListAPIView
+from .views import ChallengeListAPIView
 from django.conf.urls import url
 
 urlpatterns = [
-    url(r'^$', ArticleListAPIView.as_view(), name='articles_list'),
+    url(r'^$', ChallengeListAPIView.as_view(), name='articles_list'),
 ]

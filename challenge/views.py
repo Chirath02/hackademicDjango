@@ -1,9 +1,9 @@
 from rest_framework.generics import ListAPIView
 from .serializers import ArticleSerializer
-from .models import Article
+from .models import Challenge
 
 
-class ArticleListAPIView(ListAPIView):
-    queryset = Article.objects.all()
+class ChallengeListAPIView(ListAPIView):
+    queryset = Challenge.objects.all()
     serializer_class = ArticleSerializer
 
