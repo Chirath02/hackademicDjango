@@ -1,14 +1,14 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Article
+from .models import Challenge
 
 
 class ArticleSerializer(ModelSerializer):
 
     class Meta:
-        model = Article
+        model = Challenge
         fields = [
             'id',
             'title',
-            'content',
-            'created_by',
+            'description',
+            'authors',
         ]
