@@ -8,26 +8,27 @@ module('core.article').
 factory('Article',  ['$resource', '$location',
     function($resource, $location) {
         if($location.path() == '/article') {
-            return $resource('article.json', {}, {
+            return $resource('article', {}, {
                 query: {
                     method: 'GET',
                     params: {articleId: 'articles'},
                     isArray: true,
                     transformResponse: function(data) {
-                        return angular.fromJson(data).results;
+                        console.log(data);
+                        return angular.fromJson(data);
                     }
                 }
             });
         }
         else {
-            var response = $resource('article/:articleId.json', {}, {
+            var response = $resource('article/:articleId', {}, {
                 query: {
                     method: 'GET',
                     params: {articleId: 'articles'},
                     isArray: true
+
                 }
             });
-            console.log($location.path());
             return response;
         }
     }
