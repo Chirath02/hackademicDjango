@@ -1,13 +1,7 @@
 from .views import ArticleListAPIView, ArticleDetailAPIView
-from django.conf.urls import url, include
-from rest_framework import routers
+from django.conf.urls import url
 
-router = routers.DefaultRouter()
-#router.register(r'a', ArticleListAPIView)
-#router.register(r'^(?P<pk>\d+)/$', ArticleDetailAPIView)
-
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    url(r'^article', include(router.urls)),
+    url(r'^$', ArticleListAPIView.as_view(), name='articles_list'),
+    url(r'^(?P<pk>\d+)/$', ArticleDetailAPIView.as_view(), name='article_detail'),
 ]
