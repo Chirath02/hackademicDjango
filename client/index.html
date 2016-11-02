@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 
-<html lang="en" ng-app="hackademicApp">
+<html lang="en" ng-app>
 
     <head>
         <meta charset="UTF-8">
@@ -22,17 +22,17 @@
 
         <!-- angular js app components -->
 
-        <script src="{% static 'appjs/app.module.js' %}"></script>
-        <script src="{% static 'appjs/app.config.js' %}"></script>
-
-        <script src="{% static 'appjs/core/article/article.module.js' %}"></script>
-        <script src="{% static 'appjs/core/article/article.service.js' %}"></script>
-
-        <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>
-        <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>
-
-        <script src="{% static 'appjs/article/article-detail/article-detail.module.js' %}"></script>
-        <script src="{% static 'appjs/article/article-detail/article-detail.component.js' %}"></script>
+{#        <script src="{% static 'appjs/app.module.js' %}"></script>#}
+{#        <script src="{% static 'appjs/app.config.js' %}"></script>#}
+{##}
+{#        <script src="{% static 'appjs/core/article/article.module.js' %}"></script>#}
+{#        <script src="{% static 'appjs/core/article/article.service.js' %}"></script>#}
+{##}
+{#        <script src="{% static 'appjs/article/article-list/article-list.module.js' %}"></script>#}
+{#        <script src="{% static 'appjs/article/article-list/article-list.component.js' %}"></script>#}
+{##}
+{#        <script src="{% static 'appjs/article/article-detail/article-detail.module.js' %}"></script>#}
+{#        <script src="{% static 'appjs/article/article-detail/article-detail.component.js' %}"></script>#}
 
         <!-- load bootstrap css files -->
 
@@ -47,7 +47,7 @@
 
 
 
-    <body>
+    <body >
         <!-- Side bar -->
         <div id="sidebar">
             <div id="sidebar-background"></div>
@@ -79,8 +79,16 @@
 
         <!-- Content -->
         {% verbatim %}
-            <div id="content" ng-view></div>
+            <div id="content">
+                <label>Name:</label>
+                  <input type="text" ng-model="yourName" placeholder="Enter a name here">
+                  <hr>
+                  <h1>Hello {{yourName}}!</h1>
+                </div>
+            </div>
         {% endverbatim %}
+
+
     </body>
 
 
