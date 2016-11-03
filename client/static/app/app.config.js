@@ -4,15 +4,19 @@
 
 'use strict';
 
-angular.module('hackademic').config(
-    function config($routeProvider, $locationProvider){
-        $locationProvider.hashPrefix('!');
+angular.
+  module('hackademic').
+  config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+      $locationProvider.hashPrefix('!');
 
-        $routeProvider.when("/article/", {
-            template: "<article-list></article-list>"
-        }).when("/article/:id/", {
-            template: '<article-detail></article-detail>'
-        }).otherwise({
-            template: "<article-list></article-list>"
-        })
-    });
+      $routeProvider.
+        when('/articles', {
+          template: '<article-list></article-list>'
+        }).
+        when('/articles/:articleId', {
+          template: '<article-detail></article-detail>'
+        }).
+        otherwise('/articles');
+    }
+  ]);

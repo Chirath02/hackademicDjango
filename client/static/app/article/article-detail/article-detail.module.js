@@ -3,4 +3,7 @@
  */
 'use strict';
 
-angular.module('articleDetail', []);
+angular.module('articleDetail', [
+    'ngRoute',
+    'ngResource',
+]);

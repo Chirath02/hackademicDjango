@@ -3,4 +3,6 @@
  */
 'use strict';
 
-angular.module('articleList', []);
+angular.module('articleList', [
+    'ngRoute'
+]);

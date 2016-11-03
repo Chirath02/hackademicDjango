@@ -9,5 +9,6 @@ angular.module('hackademic', [
     'ngResource',
 
     // internal
-    'articleList'
+    'articleList',
+    'articleDetail'
 ]);

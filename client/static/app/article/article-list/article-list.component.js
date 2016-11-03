@@ -7,7 +7,7 @@ angular.module('articleList').
     component('articleList', {
         templateUrl: 'static/app/article/article-list/article-list.template.html',
         controller: function ($scope, $http) {
-            $http.get("/article/").then(function(response) {
+            $http.get("api/article/").then(function(response) {
                     $scope.articles = response.data;
                 });
         }
