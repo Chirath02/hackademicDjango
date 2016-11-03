@@ -11,6 +11,7 @@ class ArticleListSerializer(ModelSerializer):
             'title',
             'content',
             'created_by',
+            'image',
         ]
 
 
