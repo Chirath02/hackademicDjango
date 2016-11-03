@@ -24,4 +24,5 @@ class ArticleDetailSerializer(ModelSerializer):
             'title',
             'content',
             'created_by',
+            'image',
         ]
