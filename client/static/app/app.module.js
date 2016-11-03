@@ -3,4 +3,11 @@
  */
 'use strict';
 
-angular.module('hackademic', []);
+angular.module('hackademic', [
+    // external
+    'ngResource',
+    'ngRoute',
+
+    // internal
+    'articleList'
+]);

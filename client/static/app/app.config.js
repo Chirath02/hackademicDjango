@@ -4,7 +4,4 @@
 
 'use stricu';
 
-app.module('hackademic').
-    config(function () {
-
-});
+//app.module('hackademic').config(function (){});
