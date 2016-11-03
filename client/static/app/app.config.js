@@ -2,17 +2,16 @@
  * Created by chirath on 3/11/16.
  */
 
-'use stricu';
+'use strict';
 
 angular.module('hackademic').config(
-    function ($routeProvider, $locationProvider){
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
+    function config($routeProvider, $locationProvider){
+        $locationProvider.hashPrefix('!');
 
-        $routeProvider.when("/articles", {
+        $routeProvider.when("/article/", {
             template: "<article-list></article-list>"
+        }).when("/article/:id/", {
+            template: '<article-detail></article-detail>'
         }).otherwise({
             template: "<article-list></article-list>"
         })

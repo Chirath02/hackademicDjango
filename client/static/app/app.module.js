@@ -5,8 +5,8 @@
 
 angular.module('hackademic', [
     // external
-    'ngResource',
     'ngRoute',
+    'ngResource',
 
     // internal
     'articleList'
