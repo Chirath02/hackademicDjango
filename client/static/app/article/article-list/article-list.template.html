@@ -1,1 +1,4 @@
-<p style="margin-left: 1000px;"> {{ name }}</p>
+<div style="margin-left: 280px; padding-top: 100px;" ng-repeat="article in articles">
+    <p> {{ article }}</p>
+    <p><img ng-src="{{ article.img }}"></p>
+</div>
