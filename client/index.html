@@ -1,12 +1,11 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 
-<html lang="en" ng-app>
+<html lang="en" ng-app="hackademic">
 
     <head>
         <meta charset="UTF-8">
         <title>Hackademic</title>
-
 
         <!-- load angular js and bootstrap js files -->
 
@@ -19,12 +18,11 @@
 
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-
         <!-- angular js app components -->
 
-{#        <script src="{% static 'appjs/app.module.js' %}"></script>#}
-{#        <script src="{% static 'appjs/app.config.js' %}"></script>#}
-{##}
+        <script src="{% static 'app/app.module.js' %}"></script>
+        <script src="{% static 'app/app.config.js' %}"></script>
+
 {#        <script src="{% static 'appjs/core/article/article.module.js' %}"></script>#}
 {#        <script src="{% static 'appjs/core/article/article.service.js' %}"></script>#}
 {##}
