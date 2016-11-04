@@ -27,4 +27,3 @@ class ArticleUpdateAPIView(UpdateAPIView):
 class ArticleDeleteAPIView(DestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleDetailSerializer
-
