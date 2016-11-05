@@ -1,9 +1,9 @@
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
-    DestroyAPIView,
     CreateAPIView,
-    UpdateAPIView,
+    RetrieveUpdateAPIView,
+    RetrieveDestroyAPIView,
 )
 from .serializers import (
     ArticleListSerializer,
@@ -31,7 +31,7 @@ class ArticleDetailAPIView(RetrieveAPIView):
     serializer_class = ArticleDetailSerializer
 
 
-class ArticleUpdateAPIView(UpdateAPIView):
+class ArticleUpdateAPIView(RetrieveUpdateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleCreateSerializer
 
@@ -39,6 +39,6 @@ class ArticleUpdateAPIView(UpdateAPIView):
         serializer.save(last_modified_by=self.request.user)
 
 
-class ArticleDeleteAPIView(DestroyAPIView):
+class ArticleDeleteAPIView(RetrieveDestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleDetailSerializer
