@@ -30,11 +30,16 @@ class ArticleCreateAPIView(CreateAPIView):
 
 
 class ArticleListAPIView(ListAPIView):
+    """
+    to search and order based on he search_fields
+    /api/article/?search=<query>&?ordering=<item>
+    """
     queryset = Article.objects.all()
     serializer_class = ArticleListSerializer
     queryset_list = Article.objects.all()
-    filter_backends = [SearchFilter]
+    filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ['title', 'content', 'created_by__username']
+
 
 
 class ArticleDetailAPIView(RetrieveAPIView):
