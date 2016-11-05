@@ -1,4 +1,5 @@
 from django.db.models import Q
+from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
@@ -29,19 +30,11 @@ class ArticleCreateAPIView(CreateAPIView):
 
 
 class ArticleListAPIView(ListAPIView):
-    # queryset = Article.objects.all()
+    queryset = Article.objects.all()
     serializer_class = ArticleListSerializer
-
-    def get_queryset(self, *args, **kwargs):
-        queryset_list = Article.objects.all()
-        query = self.request.GET.get("q")
-        if query:
-            queryset_list = queryset_list.filter(
-                Q(title__icontains=query) |
-                Q(content__icontains=query)
-                # Q(user__created_by__icontains=query)
-            ).distinct()
-        return queryset_list
+    queryset_list = Article.objects.all()
+    filter_backends = [SearchFilter]
+    search_fields = ['title', 'content', 'created_by__username']
 
 
 class ArticleDetailAPIView(RetrieveAPIView):
