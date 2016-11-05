@@ -12,16 +12,17 @@ from .serializers import (
 )
 from .models import Article
 from rest_framework.permissions import (
-    IsAdminUser,
     IsAuthenticated,
 )
 from .permissions import IsOwnerOrReadOnly
 # permission to check whether the user is the owner of the post
 
+
 class ArticleCreateAPIView(CreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleCreateSerializer
     permission_classes = [IsAuthenticated]
+    
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user, last_modified_by=self.request.user)
 
