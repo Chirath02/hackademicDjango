@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer, ValidationError
+from rest_framework.serializers import ModelSerializer, ValidationError, CharField
 from django.contrib.auth.models import User
 
 
@@ -36,12 +36,15 @@ class UserCreateSerializer(ModelSerializer):
 
 
 class UserLoginSerializer(ModelSerializer):
+    token = CharField(allow_blank=True, read_only=True)
+    username = CharField()
 
     class Meta:
         model = User
         fields = [
             'username',
             'password',
+            'token',
         ]
         extra_kwargs = {
             "password": {
