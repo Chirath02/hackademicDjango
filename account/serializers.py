@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, ValidationError
 from django.contrib.auth.models import User
 
 
@@ -13,6 +13,13 @@ class UserCreateSerializer(ModelSerializer):
         extra_kwargs = {"password":
                             {"write_only":True}
                         }
+
+    def validate(self, data):
+        email = data['email']
+        user_query = User.objects.filter(email=email)
+        if user_query.exists():
+            raise ValidationError("A user with that email already exists.")
+        return data
 
     def create(self, validated_data):
         username = validated_data['username']
