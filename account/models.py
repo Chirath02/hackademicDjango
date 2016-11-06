@@ -1,9 +1,7 @@
-from django.contrib.auth import get_user_model
 from django.db import models
 from challenge.models import Challenge
 from classes.models import Class
-
-User = get_user_model()
+from django.contrib.auth.models import User
 
 
 class UserHasChallengeTocken(models.Model):

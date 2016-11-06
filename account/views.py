@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from rest_framework.generics import CreateAPIView
-# Create your views here.
+from .serializers import UserCreateSerializer
 
 User = get_user_model()
 

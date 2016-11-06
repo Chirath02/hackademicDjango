@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^api/article/', include('article.urls')),
     url(r'^api/challenge/', include('challenge.urls')),
     url(r'^$', IndexView.as_view(), name='home'),
+    url(r'^api/user/', include('account.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
