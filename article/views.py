@@ -41,7 +41,6 @@ class ArticleListAPIView(ListAPIView):
     search_fields = ['title', 'content', 'created_by__username']
 
 
-
 class ArticleDetailAPIView(RetrieveAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleDetailSerializer
