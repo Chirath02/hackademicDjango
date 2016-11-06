@@ -17,6 +17,9 @@ class ArticleCreateAPIView(CreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleCreateSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user, last_modified_by=self.request.user)
+
 
 class ArticleListAPIView(ListAPIView):
     queryset = Article.objects.all()

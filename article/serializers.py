@@ -8,8 +8,6 @@ class ArticleCreateSerializer(ModelSerializer):
         fields = [
             'title',
             'content',
-            'created_by',
-            'last_modified_by'
         ]
 
 
