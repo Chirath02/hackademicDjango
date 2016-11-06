@@ -33,7 +33,10 @@ class ArticleDetailAPIView(RetrieveAPIView):
 
 class ArticleUpdateAPIView(UpdateAPIView):
     queryset = Article.objects.all()
-    serializer_class = ArticleDetailSerializer
+    serializer_class = ArticleCreateSerializer
+
+    def perform_update(self, serializer):
+        serializer.save(last_modified_by=self.request.user)
 
 
 class ArticleDeleteAPIView(DestroyAPIView):
