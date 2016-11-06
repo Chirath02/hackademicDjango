@@ -10,8 +10,9 @@ class UserCreateSerializer(ModelSerializer):
             'email',
             'password',
         ]
-        extra_kwargs = {"password":
-                            {"write_only":True}
+        extra_kwargs = {"password": {
+                                "write_only": True
+                            }
                         }
 
     def validate(self, data):
@@ -32,4 +33,24 @@ class UserCreateSerializer(ModelSerializer):
         user_obj.set_password(password)
         user_obj.save()
         return validated_data
+
+
+class UserLoginSerializer(ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'password',
+        ]
+        extra_kwargs = {
+            "password": {
+                "WriteOnly": True
+            }
+        }
+
+    def validate(self, data):
+
+        return data
+
 
