@@ -15,7 +15,7 @@ from .serializers import (
 from .models import Article
 from rest_framework.permissions import (
     IsAuthenticated,
-)
+    AllowAny)
 from .permissions import IsOwnerOrReadOnly
 # permission to check whether the user is the owner of the post
 
@@ -34,6 +34,8 @@ class ArticleListAPIView(ListAPIView):
     to search and order based on he search_fields
     /api/article/?search=<query>&?ordering=<item>
     """
+
+    permission_classes = [AllowAny]
     queryset = Article.objects.all()
     serializer_class = ArticleListSerializer
     queryset_list = Article.objects.all()
@@ -44,6 +46,7 @@ class ArticleListAPIView(ListAPIView):
 class ArticleDetailAPIView(RetrieveAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleDetailSerializer
+    permission_classes = [AllowAny]
 
 
 class ArticleUpdateAPIView(RetrieveUpdateAPIView):
