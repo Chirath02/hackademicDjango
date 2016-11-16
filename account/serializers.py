@@ -36,6 +36,18 @@ class UserCreateSerializer(ModelSerializer):
         return validated_data
 
 
+class UserDetailSerializer(ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'email',
+            'first_name',
+            'last_name'
+        ]
+
+
 class UserLoginSerializer(ModelSerializer):
     token = CharField(allow_blank=True, read_only=True)
     username = CharField()
@@ -70,3 +82,5 @@ class UserLoginSerializer(ModelSerializer):
                 raise ValidationError("Incorrect credentials please try again.")
         data["token"] = "Random token"
         return data
+
+
