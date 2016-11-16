@@ -59,9 +59,8 @@ class UserLoginSerializer(ModelSerializer):
         password = data["password"]
         if not username:
             raise ValidationError("A username is required")
-        user = User.object.filter(Q(username=username))
-        user = user.exclude(username__isnull=True).exclude(username__iexact='')
-        if user.exist() and user.count() ==1:
+        user = User.objects.get(Q(username=username))
+        if user:
             user_obj = user
         else:
             raise ValidationError("This username is not valid.")
