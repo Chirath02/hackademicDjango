@@ -18,6 +18,8 @@ from django.contrib import admin
 from .views import IndexView
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_jwt.views import refresh_jwt_token
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,6 +28,8 @@ urlpatterns = [
     url(r'^api/challenge/', include('challenge.urls')),
     url(r'^$', IndexView.as_view(), name='home'),
     url(r'^api/user/', include('account.urls')),
+    url(r'^api/token/auth/', obtain_jwt_token),
+    url(r'^api-token-refresh/', refresh_jwt_token),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
